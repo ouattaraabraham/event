@@ -1,0 +1,15 @@
+
+
+/* ::-webkit-scrollbar {
+   width: 8px;
+   background:rgb(238, 101, 147);
+  } */
+
+  /* body {
+    height: 100%;
+    overflow-y: hidden;
+ } */
+
+/* body:has(.requires-no-scroll) {
+  overflow: hidden;
+}  */
