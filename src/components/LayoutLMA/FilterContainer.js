@@ -35,7 +35,7 @@ const isOpen =()=>{
   return (
     <div className=' bg-slate-300  '>
          {/* btnIsOpen */}
-         <div className='flex p-3 justify-between md:hidden'>
+         <div className='flex p-3 justify-between lg:hidden'>
               <button  onClick={isOpen}  className='flex justify-between items-center gap-1 px-3 py-1 w-max border-2  rounded-lg border-rose-600'>
                 <span><FcFilledFilter size={'16px'}/></span> Filter
               </button>
@@ -47,7 +47,7 @@ const isOpen =()=>{
 
         {/* filterGroupSelect lg: */}
         
-        <div className='hidden md:block '>
+        <div className='hidden lg:block '>
                   <FilterWrap 
                   selectedVille={selectedVille} handlerChangeVille={handlerChangeVille} selectedTEvent={selectedTEvent} selectedQuartier={selectedQuartier} handlerChangeQuartier={handlerChangeQuartier}
                    handlerChangeTEvent={handlerChangeTEvent} selectedTLieux={selectedTLieux} handlerChangeTLieux={handlerChangeTLieux}
@@ -58,7 +58,7 @@ const isOpen =()=>{
 
         {
           (!focus?(
-           <div className='fixed top-0 flex flex-col h-screen   bg-slate-700 w-full h-full lg:hidden'>
+           <div className='fixed top-0 flex flex-col h-screen   bg-slate-700 w-full h-full lg:hidden z-50'>
              {/*header filterBtnClose */}
               <div className='  bg-slate-100 text-lg text-slate-900 flex justify-between p-3 border-2 gap-x-3'>
                 <span>Filter</span>

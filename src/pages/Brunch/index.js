@@ -2,7 +2,7 @@ import React from 'react'
 
 function Brunch() {
   return (
-    <div>Brunch</div>
+    <div className='bg-red-400'>Brunch</div>
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 function SoiréesPrivées() {
   return (
-    <div>SoiréesPrivées</div>
+    <div className='bg-red-900'>SoiréesPrivées</div>
   )
 }
 

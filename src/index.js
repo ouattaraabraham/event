@@ -13,17 +13,22 @@ import Acceuil from './pages/Acceuil/index'
 import EvenementsPro from './pages/EvenementPro/index'
 import SoiréePrivées from './pages/SoireePrivee/index'
 import Anniversaires from './pages/Anniversaire/index'
-import Brunch from './pages/Brunch/index'
+import Mariage from './pages/Mariage/index'
 import Lieux from './pages/Lieux/index'
-import LocationsMateriels from './pages/LocationMateriel/index'
 import Traiteurs from './pages/Traiteur/index'
 import Staffs from './pages/Staffs/index'
 import Decoration from './pages/Decoration/index'
-import Animations from './pages/Animation/index'
+import Animation from './pages/Animations/Animation'
+import AnimationArtiste from './pages/Animations/AnimationArtiste'
+import Detail from './pages/Animations/Detail'
+
 import Contact from './pages/Contact/index'
-import ContainerLieux , {loader1 as routLoader} from './components/ContainerLieux'
-import LieuxDetail from './components/LieuxDetail/index';
-import PresentationLieux from './components/PresentationLieux/index';
+import LieuxDetail from './pages/Lieux/LieuxDetail/index';
+
+import LocationMateriel from './pages/LocationMateriel/PageGp1/index'
+import LocationMaterielGp2 from './pages/LocationMateriel/PageGp2/index'
+
+import LocationMaterielArticles from './pages/LocationMateriel/PageArticles/index'
 //import './index.css'
 
 const router = createBrowserRouter([
@@ -38,8 +43,12 @@ const router = createBrowserRouter([
       } ,
       
       {
-        path: "evenement-d'entreprise" ,
+        path: "evenement-professionnels" ,
         element: <EvenementsPro/>,
+      } ,
+      {
+        path: "mariage" ,
+        element: <Mariage/>,
       } ,
       {
         path: "soirée-privée" ,
@@ -49,24 +58,28 @@ const router = createBrowserRouter([
         path: "anniversaires" ,
         element: <Anniversaires/>,
       } ,
-    
-      {
-        path: "brunch" ,
-        element: <Brunch/>,
-      } ,
       {
         path: "trouver-lieux" ,
         element:<Lieux/>
         
       },
+      
       {
-        path: ":LieuxDetail" ,
+        path: "lieux/:LieuxDetail" ,
         element:<LieuxDetail/>
         
       },
       {
         path: "location-materiels" ,
-        element: <LocationsMateriels/>,
+        element: <LocationMateriel/>,
+      } ,
+      {
+        path: "location-materiels/:materiel" ,
+        element: <LocationMaterielGp2/>,
+      } ,
+      {
+        path: "location-materiels/:materiel/articles" ,
+        element: <LocationMaterielArticles/>,
       } ,
       {
         path: "traiteurs" ,
@@ -82,7 +95,15 @@ const router = createBrowserRouter([
       } ,
       {
         path: "animations" ,
-        element: <Animations/>,
+        element: <Animation/>,
+      } ,
+      {
+        path: "animations-artistes" ,
+        element: <AnimationArtiste/>,
+      } ,
+      {
+        path: "animations-artistes/detail" ,
+        element: <Detail/>,
       } ,
       {
         path: "contact" ,

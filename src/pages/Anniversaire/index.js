@@ -2,7 +2,7 @@ import React from 'react'
 
 function Anniversaires() {
   return (
-    <div>Anniversaires</div>
+    <div className='bg-red-300'>Anniversaires</div>
   )
 }
 

@@ -134,19 +134,12 @@ const applyFilter=()=>{
   },[selectedVille,selectedTEvent,selectedTLieux,selectedQuartier,selectedHebergement])
   
   return (
-    <div className=' w-full overflow-hidden '>
+    <div className='relative w-full overflow-hidden  lg:flex lg:flex-row '>
      {/* header img de block  */}
-      <div className=''>
+        {/* left */}
+
+      <div className='lg:w-3/4 lg:px-4'>
         <div>
-           <img className='w-full h-44 object-cover	' src="../../lieux.jpg" alt="lieux" />
-        </div>
-        <div>
-        {/* link */}
-        <div>
-          <span>Acceuil/</span>
-          <span>Acceuil/</span>
-          <span>Acceuil</span>
-        </div>
           {/* FilterContainer for filter Lieux */}
           <div>
            <FilterContainer resetState={resetStateAllState} handlerChangeVille={handlerChangeVille} selectedVille={selectedVille} selectedTEvent={selectedTEvent} handlerChangeTEvent={handlerChangeTEvent} selectedQuartier={selectedQuartier} handlerChangeQuartier={handlerChangeQuartier} selectedTLieux={selectedTLieux} handlerChangeTLieux={handlerChangeTLieux} selectedHebergement={selectedHebergement} handlerChangeHebergement={handlerChangeHebergement}/>
@@ -159,7 +152,7 @@ const applyFilter=()=>{
             </div>
           {/* Card Lieux*/}
         <div>
-        <div>
+        <div className='lg:flex lg:flex-wrap'>
           {
             list.map((item,index)=>(
             <CardLieux item={item} keys={index}/>
@@ -172,9 +165,9 @@ const applyFilter=()=>{
           </div>
         </div>
       </div>
-      {/* footer */}
-      <div className='hidden'>
-        Reght
+      {/* Reight */}
+      <div className='hidden lg:block  lg:w-1/4	bg-red-700'>
+        Reight
       </div>
     </div>
   )

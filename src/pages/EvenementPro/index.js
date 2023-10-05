@@ -2,7 +2,7 @@ import React from 'react'
 
 function EvenmentsPro() {
   return (
-    <div>EvenmentsPro</div>
+    <div className='bg-red-600'>EvenmentsPro</div>
   )
 }
 

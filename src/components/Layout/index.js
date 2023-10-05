@@ -7,14 +7,13 @@ import Footer from '../Footer/index'
 export default function Layout() {
   return (
     <div className='h-screen flex flex-col'>
-     <div className=''>
+     <div className='fixed w-full z-40'>
      <NavBar/>
      </div>
-     <div className="grow">
-     
+     <div className="grow ">
       <Outlet/>
      </div>
-     <div className="bg-neutral-800  ">
+     <div className="bg-neutral-800 z-30">
      <Footer/>
      </div>
 

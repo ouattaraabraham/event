@@ -222,7 +222,7 @@ function FilterWrap({selectedVille,handlerChangeVille,selectedTEvent,handlerChan
     
       
   return (
-    <div className='relative  flex flex-col gap-4 p-4'>
+    <div className='relative  flex flex-col gap-4 p-4 md:flex-row'>
  
       {/*............ test-Selected ....................*/}
        {/* ville */}
