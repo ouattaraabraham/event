@@ -4,7 +4,7 @@ import {AiOutlineRight} from "react-icons/ai"
 
 function BtnLinks({links}) {
   return (
-    <div className='text-sm py-2'>
+    <div className='text-xs	 py-2 px-4'>
     <ol className='flex items-baseline gap-1'>
     {
       links.map((item,index)=>

@@ -18,12 +18,12 @@ function AnimationArtiste() {
           </h1>
         {/*card container */}
         <div className='lg:grid lg:grid-cols-3 '>
-          <Card prestation="INSTRUMETISTE" link={link}/>
-          <Card prestation="ARTISTE DJ" link={link}/>
-          <Card prestation="ZOUGLOU" link={link}/>
-          <Card prestation="COUPE DEGALE" link={link}/>
-          <Card prestation="DANSEURS" link={link}/>
-          <Card prestation="DANSEUSE" link={link}/>
+          <Card description="INSTRUMETISTE" link={link}/>
+          <Card description="ARTISTE DJ" link={link}/>
+          <Card description="ZOUGLOU" link={link}/>
+          <Card description="COUPE DEGALE" link={link}/>
+          <Card description="DANSEURS" link={link}/>
+          <Card description="DANSEUSE" link={link}/>
         </div>
 
         </div>

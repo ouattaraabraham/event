@@ -19,12 +19,12 @@ function SousGpAnimation() {
           </h1>
         {/*card container */}
         <div className='lg:grid lg:grid-cols-3 '>
-          <Card prestation="DJ" link={link}/>
-          <Card prestation="DANSEUSE TRADITIONNEL" link={link}/>
-          <Card prestation="MACOTTE" link={link}/>
-          <Card prestation="SHOW POM POM GIRL" link={link}/>
-          <Card prestation="PERE NOEL" link={link}/>
-          <Card prestation="JEUX GONFLABLES" link={link}/>
+          <Card description="DJ" link={link}/>
+          <Card description="DANSEUSE TRADITIONNEL" link={link}/>
+          <Card description="MACOTTE" link={link}/>
+          <Card description="SHOW POM POM GIRL" link={link}/>
+          <Card description="PERE NOEL" link={link}/>
+          <Card description="JEUX GONFLABLES" link={link}/>
         </div>
 
         </div>

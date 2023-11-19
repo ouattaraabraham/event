@@ -1,9 +1,15 @@
 import React from 'react'
 import HeaderImg from '../../../components/headerImage'
-import Card from '../../../components/Card'
-
+import Card from '../Card'
 const img="url('../../../accesoir-table.jpg')"
-const link="/location-materiels/materiel"
+const link="/location-materiels/:materiel"
+const data=[
+    {description:"ABRIS",img:{img}},
+    {description:"ARE DE TABLE",img:{img}},
+    {description:"MOBILIER & DECO",img:{img}},
+    {description:"SONO & LUMIÉRE",img:{img}},
+    {description:"MACHINE & accesoires",img:{img}},
+]
 
 function index() {
   return (
@@ -14,17 +20,21 @@ function index() {
       <div className='relative  w-full overflow-hidden gap-5  lg:flex lg:flex-row '>
         {/* left */}
         <div className='mx-auto sm:px-2 lg:w-3/4 lg:px-4'>
-          <h1 className='bg-red-300 my-3 p-3 rounded-lg'>
+        <div className='py-4'>
+
+        <h1 className='bg-red-300 my-3 p-3 rounded-lg'>
             Retrouver tous les prestataire dont vou avez besoim pour votre evenement
           </h1>
         {/*card container */}
-        <div className='lg:grid lg:grid-cols-3 '>
-          <Card prestation="ARE DE TABLE" link={link}/>
-          <Card prestation="ABRIS" link={link}/>
-          <Card prestation="MOBILIER & DECO" link={link}/>
-          <Card prestation="SONS & LUMIERE" link={link}/>
-          <Card prestation="MACHINE & ACCESOIRE" link={link}/>
+        <div className='flex flex-col gap-10 sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-x-4 '>
+        {
+          data.map((items,index)=>(
+            <Card description={items.description} links={link} key={index}/>
+
+          ))
+        }
         </div>
+       </div>
 
         </div>
         {/* right */}

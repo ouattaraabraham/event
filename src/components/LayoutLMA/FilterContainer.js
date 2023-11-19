@@ -1,42 +1,24 @@
 /* eslint-disable no-undef */
 import React from 'react'
-import { Select, Option, } from "@material-tailwind/react";
-import SelectGp from './SelectGp/index'
-// import Tabss from "./SelectGp/Tabs"
-import './filter.css'
 import { useState  } from 'react'
-import {AiOutlineCaretUp,AiOutlineCaretDown,AiOutlineClose} from 'react-icons/ai'
+import {AiOutlineClose} from 'react-icons/ai'
 import {FcFilledFilter} from 'react-icons/fc'
 import FilterWrap from './filterWrap';
 
- 
-export function SelectDefault() {
-  return (
-    <div className="w-72 ">
-      <Select size="md" label="Select Version" className=''>
-        <Option className='p-0'>Material Tailwind HTML</Option>
-        <Option className='bg-slate-100'>Material Tailwind React</Option>
-        <Option className='bg-slate-100'>Material Tailwind Vue</Option>
-        <Option className='bg-slate-100'>Material Tailwind Angular</Option>
-        <Option className='bg-slate-100'>Material Tailwind Svelte</Option>
-      </Select>
-    </div>
-  );
-}
 
-function FilterContainer({resetState,selectedVille,handlerChangeVille,selectedTEvent,handlerChangeTEvent,selectedQuartier,handlerChangeQuartier,selectedTLieux,handlerChangeTLieux,selectedHebergement,handlerChangeHebergement}) {
-
+function FilterContainer({style,resetState,selectedVille,handlerChangeVille,selectedTEvent,handlerChangeTEvent,selectedQuartier,handlerChangeQuartier,selectedTLieux,handlerChangeTLieux,selectedHebergement,handlerChangeHebergement}) {
 const [focus,SetFocus] =useState(true)
 
 const isOpen =()=>{
+  console.log("style :"+style);
   SetFocus(prev=>!prev)
   }
 
   return (
-    <div className=' bg-slate-300  '>
+    <div className={`${style.divContainer}`}>
          {/* btnIsOpen */}
          <div className='flex p-3 justify-between lg:hidden'>
-              <button  onClick={isOpen}  className='flex justify-between items-center gap-1 px-3 py-1 w-max border-2  rounded-lg border-rose-600'>
+              <button  onClick={isOpen}  className={`${style.btn}`}>
                 <span><FcFilledFilter size={'16px'}/></span> Filter
               </button>
               <button className=' px-3 py-1 w-max border-2  rounded-lg border-rose-600'>
@@ -90,15 +72,6 @@ const isOpen =()=>{
           </div> 
         ):'' )
         }
-        {/* layout desktop */}
-        {/* <div className='hidden'>
-            <div className='grow bg-slate-50 overflow-hidden overflow-y-scroll '>
-                <FilterWrap 
-                selectedVille={selectedVille} handlerChangeVille={handlerChangeVille} selectedTEvent={selectedTEvent} selectedQuartier={selectedQuartier} handlerChangeQuartier={handlerChangeQuartier}
-                  handlerChangeTEvent={handlerChangeTEvent} selectedTLieux={selectedTLieux} handlerChangeTLieux={handlerChangeTLieux}
-                  selectedHebergement={selectedHebergement} handlerChangeHebergement={handlerChangeHebergement}/>
-            </div>
-        </div> */}
     </div>
     )
     

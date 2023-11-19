@@ -1,10 +1,15 @@
 import React from 'react'
-import HeaderImg from '../../components/headerImage/index'
+import Header from './Header/index'
 import BtnLinks from '../../components/buttons/BtnLinks'
-import LayoutLMA from '../../components/LayoutLMA/index'
+import Main from './Main/index'
+import { useOutletContext } from "react-router-dom";
+
 
 function Lieux() {
-  const img="url('../../lieux1.jpg')"
+  const {propsApp} = useOutletContext();
+
+
+  const img="linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('../../fete.jpg')"
   const text="decouvrez toutes les meilleurs prestations"
   const links=[
     {name:"ACCEUIL",to:"/",icone:true},
@@ -12,16 +17,18 @@ function Lieux() {
   ]
   return (
     <div className='pt-14' >
-    {/* header */}
-        <HeaderImg img={img} text={text} />
+        {/* header */}
+        <Header img={img} text={text} /> 
         {/* main */}
-        <div className='px-2'>
+        <div>
          {/* link */}
-         <BtnLinks links={links}/>
-       <LayoutLMA/>
+          <BtnLinks links={links}/>
+          <Main propsApp={propsApp} />
        </div>
     </div>
   )
 }
 
 export default Lieux
+
+

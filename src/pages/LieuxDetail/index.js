@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, useParams } from 'react-router-dom'
 
-import {data} from'../../../components/DD/Data'
+import {data} from'../Lieux/Main/DD/Data'
 export default function DetailLieux() {
   let { LieuxDetail} = useParams();
   const displayLieux=data.filter(item=> item.id === 0)

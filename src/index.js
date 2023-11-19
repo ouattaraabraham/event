@@ -15,6 +15,7 @@ import SoiréePrivées from './pages/SoireePrivee/index'
 import Anniversaires from './pages/Anniversaire/index'
 import Mariage from './pages/Mariage/index'
 import Lieux from './pages/Lieux/index'
+import MesFavoris from './pages/MesFavoris'
 import Traiteurs from './pages/Traiteur/index'
 import Staffs from './pages/Staffs/index'
 import Decoration from './pages/Decoration/index'
@@ -23,13 +24,22 @@ import AnimationArtiste from './pages/Animations/AnimationArtiste'
 import Detail from './pages/Animations/Detail'
 
 import Contact from './pages/Contact/index'
-import LieuxDetail from './pages/Lieux/LieuxDetail/index';
+import LieuxDetail from './pages/LieuxDetail/index';
 
 import LocationMateriel from './pages/LocationMateriel/PageGp1/index'
 import LocationMaterielGp2 from './pages/LocationMateriel/PageGp2/index'
 
 import LocationMaterielArticles from './pages/LocationMateriel/PageArticles/index'
-//import './index.css'
+
+
+// import element Redux & persistStaor
+
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore } from 'redux-persist';
+import {store} from './store/store'
+
+// console.log("storee :" +store.counter);
 
 const router = createBrowserRouter([
   {
@@ -63,7 +73,11 @@ const router = createBrowserRouter([
         element:<Lieux/>
         
       },
-      
+      {
+        path: "trouver-lieux/mes-favoris" ,
+        element:<MesFavoris/>
+        
+      },
       {
         path: "lieux/:LieuxDetail" ,
         element:<LieuxDetail/>
@@ -114,14 +128,19 @@ const router = createBrowserRouter([
 ]);
 
 
-
+let persistor=persistStore(store)
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <Provider store={store}> 
+      <PersistGate loading={null} persistor={persistor} >  
+        <RouterProvider router={router}/>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
+
 );
 
 // If you want to start measuring performance in your app, pass a function

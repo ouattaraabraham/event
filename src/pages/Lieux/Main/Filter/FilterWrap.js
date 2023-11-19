@@ -1,16 +1,12 @@
-import React, { useState , useEffect } from 'react'
+import React from 'react'
 import { AiOutlineHome,AiFillSketchCircle } from "react-icons/ai"
-
-import Selected from './SelectGp/Selected'
-import MyCombobox from './SelectGp/MyCombobox'
-import InputNInvite from './SelectGp/InputNInvite'
-import InputText from './SelectGp/InputText'
-import Hebergement from './SelectGp/Hebergement'
+import Selected from './Selected'
 
 
+function FilterWrap({propsMain}) {
 
-function FilterWrap({selectedVille,handlerChangeVille,selectedTEvent,handlerChangeTEvent,selectedQuartier,handlerChangeQuartier,selectedTLieux,handlerChangeTLieux,selectedHebergement,handlerChangeHebergement}) {
-   //All data .............................
+
+     //All data .............................
       // villes
       
       const  villes= [
@@ -221,7 +217,8 @@ function FilterWrap({selectedVille,handlerChangeVille,selectedTEvent,handlerChan
     
       
   return (
-    <div className='relative  flex flex-col gap-4 p-4 md:flex-row'>
+
+    <div className=' flex flex-col gap-2  md:flex-row '>
  
       {/*............ test-Selected ....................*/}
        {/* ville */}
@@ -229,31 +226,37 @@ function FilterWrap({selectedVille,handlerChangeVille,selectedTEvent,handlerChan
       {/* <Selected typeName={'region'} data={villes} selectedville={selectedVille} handlerChange={handlerChange}/>
       <Selected typeName={'region'} data={villes} selectedville={selectedVille} handlerChange={handlerChange}/> */}
   
-       <Selected NameSelect={'region'} data={villes} selected={selectedVille} handlerChange={handlerChangeVille}/>
+       <Selected NameSelect={'region'} data={villes} selected={propsMain.selectedVille} handlerChange={propsMain.handlerChangeVille}/>
 
         {/* Nombre invité */}
          {/* <InputNInvite/> */}
         {/* TypeEvent */}
-        <Selected NameSelect={'Type evenemt'} data={TypeEvent} selected={selectedTEvent} handlerChange={handlerChangeTEvent}/>
+        <Selected NameSelect={'Type evenemt'} data={TypeEvent} selected={propsMain.selectedTEvent} handlerChange={propsMain.handlerChangeTEvent}/>
 
 
         {/* <Selected typeName={'Type event'} TypeEvent={TypeEvent} selectedTEvent={selectedTEvent}/> */}
 
         {/* quartier */}
-        <Selected NameSelect={'Quartier'} data={quartier} selected={selectedQuartier} handlerChange={handlerChangeQuartier}/>
+        <Selected NameSelect={'Quartier'} data={quartier} selected={propsMain.selectedQuartier} handlerChange={propsMain.handlerChangeQuartier}/>
          {/* Budget */}
          {/* <InputText text='Budget ?'/> */}
         {/* Critere */}
         {/* TypeLieux */}
-        <Selected NameSelect={'Type lieux'} data={TypeLieux} selected={selectedTLieux} handlerChange={handlerChangeTLieux}/>
+        <Selected NameSelect={'Type lieux'} data={TypeLieux} selected={propsMain.selectedTLieux} handlerChange={propsMain.handlerChangeTLieux}/>
         {/* Environnement */}
          {/* <Selected people={TypeEvent} selectedTEvent={selectedTEvent} typeName='Type environement'/> */}
         {/* Hebergement */}
-        <Selected NameSelect={'Hebergement'} data={Hebergement} selected={selectedHebergement} handlerChange={handlerChangeHebergement}/>
-       
+        <Selected NameSelect={'Hebergement'} data={Hebergement} selected={propsMain.selectedHebergement} handlerChange={propsMain.handlerChangeHebergement}/>
+        {/* Effacer */}
+        <div className='hidden lg:block relative top-[28px]'>
+          <button onClick={propsMain.resetStateAllState} className=' border-2 px-3 py-1 rounded-lg grow'>
+             Effacer
+          </button>
+        </div>
 
     </div>
   )
 }
+
 
 export default FilterWrap

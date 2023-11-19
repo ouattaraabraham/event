@@ -1,7 +1,6 @@
 import React from 'react'
 import HeaderImg from '../../../components/headerImage'
-import Card from './Card'
-
+import BlockArticles from '../BlockArticles'
 
 const img="url('../../../are-de-table.jpg')"
 
@@ -11,24 +10,11 @@ function index() {
     {/* Header */}
     <HeaderImg img={img}/>
     {/* main */}
-    <div className='relative px-3  w-full overflow-hidden gap-5  lg:flex lg:flex-row '>
+    <div className='mx-auto relative px-3  w-full overflow-hidden gap-5  lg:flex lg:flex-row md:max-w-3xl lg:max-w-none '>
       {/* left */}
-      <div className='mx-auto sm:px-2 lg:w-3/4 lg:px-4'>
-        <h1 className='bg-red-300 my-3 p-3 rounded-lg'>
-          Retrouver tous les prestataire dont vou avez besoim pour votre evenement
-        </h1>
-      {/*card container */}
-      <div className=' lg:grid lg:grid-cols-3 gap-4 '>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-
-      </div>
-
+      <div className='py-6 mx-auto sm:px-2 lg:w-3/4 lg:px-4'>
+       {/* bock-articles */}
+       <BlockArticles/>
       </div>
       {/* right */}
       <div className='hidden lg:block  lg:w-1/4	bg-yellow-700'>

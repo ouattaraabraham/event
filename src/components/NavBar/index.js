@@ -2,18 +2,22 @@ import React  from 'react'
 import { useState } from 'react'
 import { AiOutlineMenu ,AiOutlineClose } from "react-icons/ai";
 import NavLinks from './NavLinks';
- export default function NavBar() {
-    const [active,SetActive] = useState(false)
-    const isActive=()=>{
-       return  SetActive((e)=>!e)
-    }
+
+
+
+ export default function NavBar({active,isActive}) {
+    // const [active,SetActive] = useState(false)
+    // const isActive=()=>{
+    //    console.log("cliker");
+    //    return  SetActive((e)=>!e)
+    // }
   return (
   <>
   {/* container */}
-   {<nav className='w-full px-3 py-3   lg:py-6 bg-slate-500'>
+  {<nav className=' w-full px-3 py-3 lg:py-6 bg-slate-500'>
    {/* wrap */}
    <div className='flex flex-row flex-wrap justify-around	'>
-        <div className='flex w-full lg:max-w-max justify-between items-center'>
+        <div className='relative flex w-full lg:max-w-max justify-between items-center'>
             <div className=' flex justify-between h-8	 w-full  rounded-full lg:max-w-max'>
                 <div className="">
                   <img src="../.././LogoEvent.jpg" alt="logo" className=' h-full object-cover rounded-lg' />
@@ -26,8 +30,8 @@ import NavLinks from './NavLinks';
                 </div>
             </div>
         </div>    
-       {/* NavLink   */}
-       <div className='hidden lg:block'>
+       {/* NavLink desktop  */}
+       <div className=' hidden lg:block'>
         <NavLinks/>
        </div>
        {/* blockNaveLink MOBILE */}
@@ -35,7 +39,7 @@ import NavLinks from './NavLinks';
         <div className='overflow-auto absolute  lg:hidden h-screen bg-slate-100 w-full left-0 top-0 px-3 py-4'>
           <div className='flex justify-between'>
             <h1>MENU</h1>
-            <button onClick={isActive}>
+            <button className='relative' onClick={isActive}>
               <AiOutlineClose size={30} />
             </button>
           </div>
